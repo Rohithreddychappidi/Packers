@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Tejaswini Packers and Movers - Tirupati</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --navy: #0D1B4B;
+    --blue: #1565C0;
+    --blue-mid: #1976D2;
+    --blue-light: #42A5F5;
+    --orange: #FF5722;
+    --orange-light: #FF7043;
+    --white: #FFFFFF;
+    --gray: #F5F7FA;
+    --text: #1a1a2e;
+    --text-light: #555;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ===== BACKGROUND MESH ===== */
+  .bg-mesh {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: 
+      radial-gradient(ellipse at 20% 20%, rgba(21,101,192,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(13,27,75,0.05) 0%, transparent 60%),
+      #ffffff;
+    pointer-events: none;
+  }
+
+  /* ===== TICKER ===== */
+  .ticker-wrap {
+    background: var(--navy);
+    color: #fff;
+    padding: 8px 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1000;
+  }
+  .ticker-content {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .ticker-content span {
+    padding: 0 40px;
+    color: #90CAF9;
+  }
+  .ticker-content b { color: #FF7043; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(21,101,192,0.12);
+    box-shadow: 0 2px 20px rgba(13,27,75,0.08);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    overflow: visible;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--blue), var(--navy));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+  }
+  .logo-text { line-height: 1.2; }
+  .logo-text .name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    display: block;
+  }
+  .logo-text .tagline {
+    font-size: 0.68rem;
+    color: var(--blue);
+    font-weight: 500;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    background: var(--blue);
+    color: white;
+  }
+
+  .nav-cta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .btn-call {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.83rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: background 0.2s;
+  }
+  .btn-call:hover { background: var(--orange-light); }
+
+  /* hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    background: none;
+  }
+  .hamburger span {
+    width: 24px;
+    height: 2.5px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: block;
+  }
+
+  /* ===== PAGES ===== */
+  .page { display: none; position: relative; z-index: 1; }
+  .page.active { display: block; }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    height: 92vh;
+    min-height: 520px;
+    overflow: hidden;
+  }
+  .hero-slides { position: absolute; inset: 0; }
+  .slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  .slide.active { opacity: 1; }
+   .slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.25) 50%,
+    rgba(0,0,0,0.1) 100%
+  );
+}
+
+  /* Slide backgrounds using CSS gradients + shapes (no external images needed) */
+  .slide-1 {
+  background-image: url('images/slide1.png');
+  background-size: cover;
+  background-position: center;
+}
+.slide-2 {
+  background-image: url('images/slide2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.slide-3 {
+  background-image: url('images/slide3.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.slide-4 {
+  background-image: url('images/slide4.jpg');
+  background-size: cover;
+  background-position: center;
+}
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .hero-text { max-width: 620px; }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,87,34,0.15);
+    border: 1px solid rgba(255,87,34,0.4);
+    color: #FF8A65;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+  .hero-title span { color: #64B5F6; }
+  .hero-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 400;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--orange);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(255,87,34,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,87,34,0.4); }
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.6);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+  /* hero stats */
+  .hero-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+  }
+  .hero-stats-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    gap: 0;
+  }
+  .stat-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    border-right: 1px solid rgba(13,27,75,0.1);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--navy);
+    display: block;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* slide dots */
+  .slide-dots {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 8px;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .dot.active { background: white; width: 24px; border-radius: 4px; }
+
+  /* ===== GLASS LAYER SECTIONS ===== */
+  .site-body {
+    position: relative;
+    z-index: 1;
+    background: white;
+  }
+
+  /* The white bg with glass cards effect */
+  .glass-section {
+    position: relative;
+    padding: 80px 0;
+  }
+
+  .glass-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(21,101,192,0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(13,27,75,0.07);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(13,27,75,0.12);
+  }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.75;
+    max-width: 580px;
+  }
+
+  /* ===== ABOUT SECTION ===== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .about-img-wrap {
+    position: relative;
+  }
+  .about-img {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--navy) 100%);
+    border-radius: 20px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .about-img-svg {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    opacity: 0.9;
+  }
+  .about-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--orange);
+    color: white;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(255,87,34,0.3);
+  }
+  .about-badge .num { font-size: 2rem; font-weight: 800; line-height: 1; }
+  .about-badge .txt { font-size: 0.72rem; font-weight: 600; opacity: 0.9; }
+
+  .about-features { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
+  .feature-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: var(--gray);
+    border-radius: 12px;
+    transition: background 0.2s;
+  }
+  .feature-row:hover { background: #EEF2FF; }
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--blue);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .feature-text .ft { font-weight: 700; font-size: 0.9rem; color: var(--navy); }
+  .feature-text .fs { font-size: 0.78rem; color: var(--text-light); margin-top: 2px; }
+
+  /* ===== SERVICES ===== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .service-card {
+    padding: 32px;
+  }
+  .service-icon-wrap {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--blue), var(--navy));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  .service-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .service-desc { font-size: 0.86rem; color: var(--text-light); line-height: 1.7; }
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--blue);
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-top: 16px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .service-link:hover { color: var(--orange); }
+
+  /* ===== QUOTE BANNER ===== */
+  .quote-section {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    padding: 70px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-section::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .quote-section::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .quote-inner {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .quote-inner h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 12px;
+  }
+  .quote-inner p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+  }
+  .quote-form {
+    display: flex;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .quote-input {
+    flex: 1;
+    min-width: 220px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+  }
+  .quote-btn {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+  .quote-btn:hover { background: var(--orange-light); }
+
+  /* ===== WHY US ===== */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .why-card {
+    padding: 28px 22px;
+    text-align: center;
+  }
+  .why-num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--blue);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .why-title { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .why-desc { font-size: 0.8rem; color: var(--text-light); line-height: 1.6; }
+
+  /* ===== ABOUT PAGE ===== */
+  .about-hero {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    padding: 80px 0 60px;
+    text-align: center;
+    color: white;
+  }
+  .about-hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 12px; }
+  .about-hero p { color: rgba(255,255,255,0.8); font-size: 1rem; max-width: 500px; margin: 0 auto; }
+
+  .page-breadcrumb {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+  }
+  .page-breadcrumb span { color: #FF8A65; }
+
+  .team-values { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+  .value-card { padding: 32px; text-align: center; }
+  .value-icon { font-size: 2.5rem; margin-bottom: 16px; }
+  .value-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .value-desc { font-size: 0.84rem; color: var(--text-light); line-height: 1.7; }
+
+  /* ===== SERVICES PAGE ===== */
+  .services-hero {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    padding: 80px 0 60px;
+    text-align: center;
+    color: white;
+  }
+
+  .services-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 28px;
+  }
+  .service-detail-card { padding: 36px; }
+  .service-detail-img {
+    height: 180px;
+    background: linear-gradient(135deg, var(--blue-light), var(--blue));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    margin-bottom: 24px;
+  }
+  .sdc-title { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .sdc-desc { font-size: 0.86rem; color: var(--text-light); line-height: 1.75; margin-bottom: 16px; }
+  .sdc-features { list-style: none; }
+  .sdc-features li {
+    font-size: 0.83rem;
+    color: var(--text-light);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sdc-features li i { color: var(--blue); font-size: 0.75rem; }
+
+  /* ===== CONTACT PAGE ===== */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .contact-info-card { padding: 36px; }
+  .contact-info-title { font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
+  .contact-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+  .contact-icon {
+    width: 46px;
+    height: 46px;
+    background: linear-gradient(135deg, var(--blue), var(--navy));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .contact-detail .cd-label { font-size: 0.72rem; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .contact-detail .cd-val { font-size: 0.9rem; color: var(--text); font-weight: 500; line-height: 1.5; }
+  .contact-detail a { color: var(--text); text-decoration: none; }
+  .contact-detail a:hover { color: var(--blue); }
+
+  .contact-form-card { padding: 36px; }
+  .form-title { font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { font-size: 0.82rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 7px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid rgba(13,27,75,0.12);
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+    background: var(--gray);
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--blue);
+    background: white;
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .submit-btn {
+    width: 100%;
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.2s;
+  }
+  .submit-btn:hover { background: var(--navy); }
+  .submit-btn.wa { background: #25D366; margin-top: 10px; }
+  .submit-btn.wa:hover { background: #20B558; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy);
+    color: white;
+    padding: 60px 0 0;
+    position: relative;
+    z-index: 1;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-brand .logo { margin-bottom: 16px; display: inline-flex; }
+  .footer-brand p { font-size: 0.84rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 20px; }
+  .footer-socials { display: flex; gap: 10px; }
+  .social-btn {
+    width: 38px;
+    height: 38px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: background 0.2s;
+    font-size: 0.9rem;
+  }
+  .social-btn:hover { background: var(--blue); color: white; }
+
+  .footer-col-title { font-size: 0.88rem; font-weight: 700; margin-bottom: 18px; color: white; text-transform: uppercase; letter-spacing: 1px; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 0.84rem;
+    transition: color 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-links a:hover { color: #90CAF9; }
+  .footer-links a i { font-size: 0.65rem; }
+
+  .footer-contact-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+  .footer-contact-item i { color: var(--blue-light); font-size: 0.9rem; margin-top: 3px; }
+  .footer-contact-item span { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+  .footer-contact-item a { color: rgba(255,255,255,0.65); text-decoration: none; }
+  .footer-contact-item a:hover { color: #90CAF9; }
+
+  .footer-bottom {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+  .footer-bottom a { color: #90CAF9; text-decoration: none; }
+
+  /* ===== WHATSAPP FLOAT ===== */
+  .wa-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+  .wa-btn {
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.6rem;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+    animation: pulse 2.5s ease infinite;
+    position: relative;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 6px 36px rgba(37,211,102,0.65); }
+  }
+  .wa-btn .wa-tooltip {
+    position: absolute;
+    right: 70px;
+    background: var(--navy);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .wa-btn:hover .wa-tooltip { opacity: 1; }
+  .wa-btn .wa-tooltip::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-left-color: var(--navy);
+  }
+  .call-float {
+    width: 50px;
+    height: 50px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(255,87,34,0.35);
+  }
+
+  /* ===== MOBILE ===== */
+  /* ===== MOBILE 768px ===== */
+@media (max-width: 768px) {
+  /* Ticker */
+  .ticker-content { font-size: 0.75rem; animation-duration: 20s; }
+
+  /* Navbar */
+  .hamburger { display: flex; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 68px;
+    left: 0; right: 0;
+    background: white;
+    padding: 12px 16px 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    gap: 4px;
+    z-index: 998;
+    border-top: 1px solid rgba(21,101,192,0.1);
+  }
+  .nav-links.open a {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+  }
+  .nav-cta.open {
+    display: flex;
+    position: fixed;
+    top: auto;
+    background: transparent;
+    left: 16px; right: 16px;
+    z-index: 997;
+  }
+
+  /* Hero */
+  .hero { height: auto; min-height: 100svh; }
+  .hero-content {
+    padding: 80px 20px 180px;
+    align-items: flex-start;
+  }
+  .hero-text { max-width: 100%; }
+  .hero-title { font-size: 2rem; }
+  .hero-sub { font-size: 0.9rem; }
+  .hero-badge { font-size: 0.7rem; padding: 5px 12px; }
+  .hero-btns { flex-direction: column; gap: 10px; }
+  .btn-primary, .btn-outline {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Hero stats */
+  .hero-stats-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    gap: 0;
+  }
+  .stat-item {
+    padding: 14px 8px;
+    border-right: none;
+    border-bottom: 1px solid rgba(13,27,75,0.08);
+  }
+  .stat-item:nth-child(odd) { border-right: 1px solid rgba(13,27,75,0.08); }
+  .stat-item:nth-child(3),
+  .stat-item:nth-child(4) { border-bottom: none; }
+  .stat-num { font-size: 1.4rem; }
+  .stat-label { font-size: 0.65rem; }
+
+  /* Slide dots */
+  .slide-dots { bottom: 100px; }
+
+  /* Sections */
+  .glass-section { padding: 52px 0; }
+  .container { padding: 0 16px; }
+  .section-title { font-size: 1.5rem; }
+  .section-sub { font-size: 0.88rem; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 28px; }
+  .about-img-wrap { order: -1; }
+  .about-img { height: 240px !important; border-radius: 16px; }
+  .about-img img { object-fit: cover; width: 100%; height: 100%; border-radius: 16px; }
+  .about-badge {
+    right: 12px;
+    bottom: -16px;
+    padding: 14px;
+  }
+  .about-badge .num { font-size: 1.5rem; }
+  .about-features { gap: 10px; margin-top: 20px; }
+  .feature-row { padding: 12px 14px; gap: 12px; }
+  .feature-icon { width: 36px; height: 36px; font-size: 0.9rem; }
+  .feature-text .ft { font-size: 0.85rem; }
+  .feature-text .fs { font-size: 0.74rem; }
+
+  /* Services grid */
+  .services-grid { grid-template-columns: 1fr; gap: 16px; }
+  .service-card { padding: 24px 20px; }
+  .service-icon-wrap { width: 54px; height: 54px; font-size: 1.3rem; border-radius: 14px; }
+  .service-title { font-size: 1rem; }
+  .service-desc { font-size: 0.84rem; }
+
+  /* Why grid */
+  .why-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .why-card { padding: 20px 14px; }
+  .why-num { font-size: 2rem; }
+  .why-title { font-size: 0.88rem; }
+  .why-desc { font-size: 0.76rem; }
+
+  /* Quote section */
+  .quote-section { padding: 52px 0; }
+  .quote-section h2 { font-size: 1.35rem; }
+  .quote-form { flex-direction: column; gap: 10px; max-width: 100%; }
+  .quote-input { min-width: 0; width: 100%; font-size: 0.88rem; }
+  .quote-btn { width: 100%; justify-content: center; }
+
+  /* About page hero */
+  .about-hero { padding: 52px 0 40px; }
+  .about-hero h1 { font-size: 1.8rem; }
+
+  /* Values */
+  .team-values { grid-template-columns: 1fr; gap: 16px; }
+  .value-card { padding: 24px 20px; }
+
+  /* Services page */
+  .services-hero { padding: 52px 0 40px; }
+  .services-detail-grid { grid-template-columns: 1fr; gap: 20px; }
+  .service-detail-card { padding: 24px 20px; }
+  .service-detail-img { height: 140px; font-size: 3rem; margin-bottom: 18px; border-radius: 10px; }
+  .sdc-title { font-size: 1.05rem; }
+  .sdc-desc { font-size: 0.84rem; }
+  .sdc-features li { font-size: 0.8rem; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; gap: 20px; }
+  .contact-info-card, .contact-form-card { padding: 24px 18px; }
+  .contact-info-title, .form-title { font-size: 1.1rem; }
+  .contact-icon { width: 40px; height: 40px; font-size: 1rem; border-radius: 10px; }
+  .contact-detail .cd-val { font-size: 0.85rem; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  .form-group { margin-bottom: 14px; }
+  .form-group input, .form-group select, .form-group textarea {
+    font-size: 16px; /* prevents iOS zoom */
+    padding: 11px 14px;
+  }
+  .submit-btn { font-size: 0.88rem; padding: 13px; }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 32px;
+  }
+  .footer-brand { grid-column: auto; }
+  .footer-brand p { font-size: 0.82rem; }
+  .footer-col-title { font-size: 0.82rem; margin-bottom: 12px; }
+  .footer-links a { font-size: 0.82rem; }
+  .footer-contact-item span { font-size: 0.8rem; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 6px; }
+  .footer-bottom p { font-size: 0.74rem; }
+
+  /* Float buttons */
+  .wa-float { bottom: 20px; right: 14px; gap: 10px; }
+  .wa-btn { width: 52px; height: 52px; font-size: 1.4rem; }
+  .call-float { width: 44px; height: 44px; font-size: 1.1rem; }
+
+  /* Page breadcrumb */
+  .page-breadcrumb { font-size: 0.78rem; }
+}
+
+/* ===== MOBILE 480px ===== */
+@media (max-width: 480px) {
+  .hero-title { font-size: 1.75rem; }
+  .hero-content { padding: 80px 16px 190px; }
+
+  .stat-num { font-size: 1.25rem; }
+  .stat-label { font-size: 0.6rem; }
+
+  .why-grid { grid-template-columns: 1fr; gap: 12px; }
+  .why-card { padding: 18px 16px; }
+
+  .section-title { font-size: 1.35rem; }
+  .about-img { height: 200px !important; }
+
+  .footer-socials { gap: 8px; }
+  .social-btn { width: 34px; height: 34px; font-size: 0.82rem; }
+
+  .quote-section h2 { font-size: 1.2rem; }
+  .quote-section p { font-size: 0.84rem; }
+}
+  /* ===== ANIMATIONS ===== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* divider accent */
+  .section-divider {
+    width: 48px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--orange));
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+
+  /* Floating nav on mobile close */
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 990;
+  }
+  .nav-overlay.show { display: block; }
+
+  /* success toast */
+  .toast {
+    position: fixed;
+    bottom: 100px;
+    right: 28px;
+    background: #25D366;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    z-index: 10001;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+</style>
+</head>
+<body>
+
+<div class="bg-mesh"></div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-content">
+    <span>📦 Sri Tejaswini Packers & Movers — Tirupati</span>
+    <span>📞 <b>9381234146</b> | <b>9515330444</b></span>
+    <span>✅ House Shifting &amp; Office Shifting All Over India</span>
+    <span>🚛 Loading, Unloading &amp; Vehicle Transport Services</span>
+    <span>⏰ Available 24 Hours · 7 Days a Week</span>
+    <span>📍 Vasavi Nagar, Mr Palli Circle, Tirupati – 517502</span>
+    <span>📦 Sri Tejaswini Packers & Movers — Tirupati</span>
+    <span>📞 <b>9381234146</b> | <b>9515330444</b></span>
+    <span>✅ House Shifting &amp; Office Shifting All Over India</span>
+    <span>🚛 Loading, Unloading &amp; Vehicle Transport Services</span>
+    <span>⏰ Available 24 Hours · 7 Days a Week</span>
+    <span>📍 Vasavi Nagar, Mr Palli Circle, Tirupati – 517502</span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+  <a class="logo" onclick="showPage('home')" style="cursor:pointer">
+    <img src="images/slide2.jpg" alt="Sri Tejaswini Packers and Movers" style="height:44px; width:44px; border-radius:10px; object-fit:cover;">
+    <div class="logo-text">
+      <span class="name">Sri Tejaswini</span>
+      <span class="tagline">Packers & Movers</span>
+    </div>
+  </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
+      <li><a onclick="showPage('about')" id="nav-about">About Us</a></li>
+      <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+      <li><a onclick="showPage('contact')" id="nav-contact">Contact Us</a></li>
+    </ul>
+
+    <div class="nav-cta" id="navCta">
+      <a class="btn-call" href="tel:9381234146"><i class="fas fa-phone"></i> Call Now</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
+
+<!-- ===================== HOME PAGE ===================== -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-slides">
+      <div class="slide slide-1 active"></div>
+      <div class="slide slide-2"></div>
+      <div class="slide slide-3"></div>
+      <div class="slide slide-4"></div>
+    </div>
+
+    <!-- Truck SVG overlay for visual interest -->
+    <div style="position:absolute;right:5%;top:50%;transform:translateY(-50%);z-index:2;opacity:0.18;display:none;" id="heroTruck">
+      <svg viewBox="0 0 400 200" width="400" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="60" width="240" height="100" rx="8"/>
+        <rect x="260" y="90" width="100" height="70" rx="6"/>
+        <circle cx="80" cy="170" r="22"/>
+        <circle cx="290" cy="170" r="22"/>
+        <circle cx="340" cy="170" r="22"/>
+        <rect x="260" y="90" width="30" height="40" rx="3" fill="rgba(255,255,255,0.5)"/>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge"><i class="fas fa-star"></i> Trusted Since Day One · Tirupati</div>
+        <h1 class="hero-title">
+          Reliable <span>Packers &amp;</span><br>Movers in Tirupati
+        </h1>
+        <p class="hero-sub">
+          Safe, fast, and affordable relocation services for homes, offices, and vehicles — anywhere across India. We handle your belongings like our own.
+        </p>
+        <div class="hero-btns">
+          <a class="btn-primary" href="https://wa.me/919381234146?text=Hi%2C%20I%20need%20a%20quote%20for%20shifting%20services" target="_blank">
+            <i class="fab fa-whatsapp"></i> Get Free Quote
+          </a>
+          <a class="btn-outline" href="tel:9381234146">
+            <i class="fas fa-phone"></i> 9381234146
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-dots" id="slideDots">
+      <div class="dot active" onclick="goToSlide(0)"></div>
+      <div class="dot" onclick="goToSlide(1)"></div>
+      <div class="dot" onclick="goToSlide(2)"></div>
+      <div class="dot" onclick="goToSlide(3)"></div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stats-inner">
+        <div class="stat-item">
+          <span class="stat-num">500+</span>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">100%</span>
+          <div class="stat-label">Safe Delivery</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">24/7</span>
+          <div class="stat-label">Available</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">PAN</span>
+          <div class="stat-label">India Service</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section class="glass-section" style="background: var(--gray);">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap fade-up">
+          <div class="about-img">
+            <img src="images/about.png" alt="Sri Tejaswini Packers and Movers" class="about-img">
+          </div>
+          <div class="about-badge">
+            <div class="num">5★</div>
+            <div class="txt">Rated Service</div>
+          </div>
+        </div>
+        <div class="fade-up" style="transition-delay:0.15s">
+          <div class="section-label">About Us</div>
+          <div class="section-divider"></div>
+          <h2 class="section-title">Tirupati's Most Trusted<br>Moving Partner</h2>
+          <p class="section-sub">Sri Tejaswini Packers and Movers has been serving families and businesses in Tirupati with honest, careful, and timely relocation services. From a single room to full office moves — we've done it all.</p>
+          <div class="about-features">
+            <div class="feature-row">
+              <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+              <div class="feature-text">
+                <div class="ft">Fully Insured Moves</div>
+                <div class="fs">Your goods are covered during transit for complete peace of mind.</div>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-icon"><i class="fas fa-users"></i></div>
+              <div class="feature-text">
+                <div class="ft">Trained Professional Team</div>
+                <div class="fs">Skilled packers and handlers who treat your items with care.</div>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-icon"><i class="fas fa-clock"></i></div>
+              <div class="feature-text">
+                <div class="ft">24-Hour Availability</div>
+                <div class="fs">We're available around the clock — even on weekends and holidays.</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:28px;">
+            <a class="btn-primary" onclick="showPage('about')" style="cursor:pointer">
+              Know More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES OVERVIEW -->
+  <section class="glass-section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;" class="fade-up">
+        <div class="section-label">What We Do</div>
+        <div class="section-divider" style="margin:0 auto 24px;"></div>
+        <h2 class="section-title">Our Relocation Services</h2>
+        <p class="section-sub" style="margin:0 auto;">From packing to delivery — we handle every step of your move with precision and care.</p>
+      </div>
+      <div class="services-grid">
+        <div class="glass-card service-card fade-up">
+          <div class="service-icon-wrap"><i class="fas fa-home"></i></div>
+          <div class="service-title">House Shifting</div>
+          <p class="service-desc">Complete household relocation — packing, loading, transport, unloading, and unpacking. Safe handling of furniture, electronics, and fragile items.</p>
+          <a class="service-link" onclick="showPage('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="glass-card service-card fade-up" style="transition-delay:0.1s">
+          <div class="service-icon-wrap"><i class="fas fa-building"></i></div>
+          <div class="service-title">Office Shifting</div>
+          <p class="service-desc">Minimal downtime office relocation — we shift your office infrastructure, IT equipment, files, and furniture with zero hassle.</p>
+          <a class="service-link" onclick="showPage('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="glass-card service-card fade-up" style="transition-delay:0.2s">
+          <div class="service-icon-wrap"><i class="fas fa-people-carry"></i></div>
+          <div class="service-title">Loading & Unloading</div>
+          <p class="service-desc">Standalone loading and unloading service. Our trained workforce handles heavy items, appliances, and goods safely and efficiently.</p>
+          <a class="service-link" onclick="showPage('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="glass-section" style="background: var(--gray);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px;" class="fade-up">
+        <div class="section-label">Why Choose Us</div>
+        <div class="section-divider" style="margin:0 auto 20px;"></div>
+        <h2 class="section-title">What Makes Us Different</h2>
+      </div>
+      <div class="why-grid">
+        <div class="glass-card why-card fade-up">
+          <div class="why-num">500+</div>
+          <div class="why-title">Successful Moves</div>
+          <p class="why-desc">Hundreds of families and businesses trust us with their relocation every year.</p>
+        </div>
+        <div class="glass-card why-card fade-up" style="transition-delay:0.1s">
+          <div class="why-num">24/7</div>
+          <div class="why-title">Round the Clock</div>
+          <p class="why-desc">Call us anytime — day, night, weekends, holidays. We're always ready.</p>
+        </div>
+        <div class="glass-card why-card fade-up" style="transition-delay:0.2s">
+          <div class="why-num">0%</div>
+          <div class="why-title">Damage Rate</div>
+          <p class="why-desc">Our professional packing ensures zero damage during transit. Always.</p>
+        </div>
+        <div class="glass-card why-card fade-up" style="transition-delay:0.3s">
+          <div class="why-num">PAN</div>
+          <div class="why-title">India Reach</div>
+          <p class="why-desc">From Tirupati to any corner of India — we move it all.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE BANNER -->
+  <section class="quote-section">
+    <div class="container quote-inner">
+      <h2>Ready to Move? Get a Free Quote Now</h2>
+      <p>Send us a WhatsApp message and get an instant quote within minutes.</p>
+      <div class="quote-form">
+        <input class="quote-input" type="text" placeholder="Your Name" id="quoteName">
+        <input class="quote-input" type="tel" placeholder="Phone Number" id="quotePhone">
+        <button class="quote-btn" onclick="sendQuoteWA()">
+          <i class="fab fa-whatsapp"></i> WhatsApp Quote
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" onclick="showPage('home')" style="cursor:pointer">
+            <div class="logo-icon"><i class="fas fa-truck-moving"></i></div>
+            <div class="logo-text">
+              <span class="name" style="color:white">Sri Tejaswini</span>
+              <span class="tagline">Packers & Movers</span>
+            </div>
+          </a>
+          <p>Trusted packers and movers based in Tirupati, offering safe and reliable relocation services across India since day one.</p>
+          <div class="footer-socials">
+            <a class="social-btn" href="https://wa.me/919381234146" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a class="social-btn" href="tel:9381234146"><i class="fas fa-phone"></i></a>
+            <a class="social-btn" href="mailto:ntejaswini717@gmail.com"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a onclick="showPage('home')"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a onclick="showPage('about')"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a onclick="showPage('contact')"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Our Services</div>
+          <ul class="footer-links">
+            <li><a onclick="showPage('services')"><i class="fas fa-chevron-right"></i> House Shifting</a></li>
+            <li><a onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Office Shifting</a></li>
+            <li><a onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Loading & Unloading</a></li>
+            <li><a onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Vehicle Transport</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Opp Mapil School, TTD Plots,<br>Vasavi Nagar, Mr Palli Circle,<br>Tirupati – 517502</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-phone"></i>
+            <span><a href="tel:9381234146">9381234146</a><br><a href="tel:9515330444">9515330444</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span><a href="mailto:ntejaswini717@gmail.com">ntejaswini717@gmail.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-clock"></i>
+            <span>24 Hours · 7 Days a Week</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Sri Tejaswini Packers and Movers. All rights reserved.</p>
+        <p>Tirupati, Andhra Pradesh – 517502</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== ABOUT PAGE ===================== -->
+<div class="page" id="page-about">
+  <div class="about-hero">
+    <div class="container">
+      <h1>About Us</h1>
+      <p>The story behind Tirupati's most reliable packers and movers</p>
+      <div class="page-breadcrumb">Home <i class="fas fa-chevron-right" style="font-size:0.6rem"></i> <span>About Us</span></div>
+    </div>
+  </div>
+
+  <section class="glass-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="fade-up">
+          <div class="section-label">Our Story</div>
+          <div class="section-divider"></div>
+          <h2 class="section-title">Built on Trust,<br>Driven by Care</h2>
+          <p class="section-sub">Sri Tejaswini Packers and Movers was founded with a simple mission: to make moving stress-free. Based in Vasavi Nagar, Tirupati, we've grown from a small local operation into a full-service relocation company trusted by hundreds of families and businesses across Andhra Pradesh and beyond.</p>
+          <p class="section-sub" style="margin-top:16px;">Every move is unique — and we treat it that way. Our team learns your requirements, plans the move meticulously, and executes it with care from door to door.</p>
+          <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+            <a class="btn-primary" href="https://wa.me/919381234146?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services" target="_blank"><i class="fab fa-whatsapp"></i> Chat with Us</a>
+            <a class="btn-call" href="tel:9381234146"><i class="fas fa-phone"></i> Call Now</a>
+          </div>
+        </div>
+        <div class="fade-up" style="transition-delay:0.15s">
+          <div class="about-img" style="height:380px;">
+            <img src="images/about.png" alt="Sri Tejaswini Packers and Movers" class="about-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glass-section" style="background:var(--gray)">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:44px;" class="fade-up">
+        <div class="section-label">Our Values</div>
+        <div class="section-divider" style="margin:0 auto 20px;"></div>
+        <h2 class="section-title">What We Stand For</h2>
+      </div>
+      <div class="team-values">
+        <div class="glass-card value-card fade-up">
+          <div class="value-icon">🛡️</div>
+          <div class="value-title">Safety First</div>
+          <p class="value-desc">Every item is packed with professional-grade materials. Fragile goods get special attention. We don't rush — we do it right.</p>
+        </div>
+        <div class="glass-card value-card fade-up" style="transition-delay:0.1s">
+          <div class="value-icon">⏰</div>
+          <div class="value-title">Always On Time</div>
+          <p class="value-desc">We respect your schedule. Confirmed timings are adhered to without excuses — because your time is valuable.</p>
+        </div>
+        <div class="glass-card value-card fade-up" style="transition-delay:0.2s">
+          <div class="value-icon">💬</div>
+          <div class="value-title">Transparent Pricing</div>
+          <p class="value-desc">No hidden charges. No last-minute surprises. You get a clear quote upfront and pay exactly that.</p>
+        </div>
+        <div class="glass-card value-card fade-up" style="transition-delay:0.3s">
+          <div class="value-icon">🇮🇳</div>
+          <div class="value-title">All India Service</div>
+          <p class="value-desc">Whether you're moving within Tirupati or relocating to Delhi, Mumbai, or Chennai — we've got you covered nationwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="container quote-inner">
+      <h2>Have Questions? Let's Talk</h2>
+      <p>Our team is available 24 hours — reach us instantly on WhatsApp.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px;">
+        <a class="btn-primary" href="https://wa.me/919381234146?text=Hi%2C%20I%20have%20a%20question%20about%20your%20services" target="_blank" style="text-decoration:none;"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+        <a href="tel:9381234146" class="btn-outline" style="text-decoration:none;"><i class="fas fa-phone"></i> 9381234146</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (same) -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" onclick="showPage('home')" style="cursor:pointer">
+            <div class="logo-icon"><i class="fas fa-truck-moving"></i></div>
+            <div class="logo-text">
+              <span class="name" style="color:white">Sri Tejaswini</span>
+              <span class="tagline">Packers & Movers</span>
+            </div>
+          </a>
+          <p>Trusted packers and movers based in Tirupati, offering safe and reliable relocation services across India.</p>
+          <div class="footer-socials">
+            <a class="social-btn" href="https://wa.me/919381234146" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a class="social-btn" href="tel:9381234146"><i class="fas fa-phone"></i></a>
+            <a class="social-btn" href="mailto:ntejaswini717@gmail.com"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a onclick="showPage('home')"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a onclick="showPage('about')"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a onclick="showPage('contact')"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a onclick="showPage('services')"><i class="fas fa-chevron-right"></i> House Shifting</a></li>
+            <li><a onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Office Shifting</a></li>
+            <li><a onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Loading & Unloading</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:9381234146">9381234146</a> | <a href="tel:9515330444">9515330444</a></span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:ntejaswini717@gmail.com">ntejaswini717@gmail.com</a></span></div>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Tirupati – 517502</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Sri Tejaswini Packers and Movers. All rights reserved.</p>
+        <p>Tirupati, Andhra Pradesh</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== SERVICES PAGE ===================== -->
+<div class="page" id="page-services">
+  <div class="services-hero">
+    <div class="container">
+      <h1 style="font-size:2.5rem;font-weight:800;margin-bottom:12px;">Our Services</h1>
+      <p style="color:rgba(255,255,255,0.8);font-size:1rem;max-width:500px;margin:0 auto;">Professional, affordable, and reliable moving solutions tailored to your needs</p>
+      <div class="page-breadcrumb">Home <i class="fas fa-chevron-right" style="font-size:0.6rem"></i> <span>Services</span></div>
+    </div>
+  </div>
+
+  <section class="glass-section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;" class="fade-up">
+        <div class="section-label">What We Offer</div>
+        <div class="section-divider" style="margin:0 auto 20px;"></div>
+        <h2 class="section-title">Complete Relocation Solutions</h2>
+        <p class="section-sub" style="margin:0 auto;">From packing your first box to placing the last item in your new home — we do it all.</p>
+      </div>
+
+      <div class="services-detail-grid">
+        <div class="glass-card service-detail-card fade-up">
+          <div class="service-detail-img">🏠</div>
+          <div class="sdc-title">House Shifting</div>
+          <p class="sdc-desc">Complete residential relocation service from Tirupati to anywhere in India. We pack every item carefully, load it securely, transport it safely, and unpack it at your new home.</p>
+          <ul class="sdc-features">
+            <li><i class="fas fa-check-circle"></i> Professional packing with quality materials</li>
+            <li><i class="fas fa-check-circle"></i> Furniture disassembly &amp; reassembly</li>
+            <li><i class="fas fa-check-circle"></i> Safe handling of electronics &amp; fragile items</li>
+            <li><i class="fas fa-check-circle"></i> Unpacking &amp; arrangement at destination</li>
+            <li><i class="fas fa-check-circle"></i> All India delivery</li>
+          </ul>
+          <a class="btn-primary" href="https://wa.me/919381234146?text=Hi%2C%20I%20need%20House%20Shifting%20service%20from%20Tirupati" target="_blank" style="margin-top:20px;display:inline-flex;text-decoration:none;"><i class="fab fa-whatsapp"></i> Get Quote</a>
+        </div>
+
+        <div class="glass-card service-detail-card fade-up" style="transition-delay:0.1s">
+          <div class="service-detail-img">🏢</div>
+          <div class="sdc-title">Office Shifting</div>
+          <p class="sdc-desc">Relocate your office without losing a single workday. We handle IT equipment, workstations, files, furniture, and servers with utmost care and minimum downtime.</p>
+          <ul class="sdc-features">
+            <li><i class="fas fa-check-circle"></i> IT equipment packing &amp; transport</li>
+            <li><i class="fas fa-check-circle"></i> Workstation disassembly &amp; setup</li>
+            <li><i class="fas fa-check-circle"></i> Files &amp; document management</li>
+            <li><i class="fas fa-check-circle"></i> Weekend &amp; after-hours moves available</li>
+            <li><i class="fas fa-check-circle"></i> Minimum business disruption</li>
+          </ul>
+          <a class="btn-primary" href="https://wa.me/919381234146?text=Hi%2C%20I%20need%20Office%20Shifting%20service" target="_blank" style="margin-top:20px;display:inline-flex;text-decoration:none;"><i class="fab fa-whatsapp"></i> Get Quote</a>
+        </div>
+
+        <div class="glass-card service-detail-card fade-up" style="transition-delay:0.2s">
+          <div class="service-detail-img">💪</div>
+          <div class="sdc-title">Loading & Unloading</div>
+          <p class="sdc-desc">Need just loading or unloading help? Our strong, trained team can handle heavy goods, appliances, and commercial items safely — no move too big or small.</p>
+          <ul class="sdc-features">
+            <li><i class="fas fa-check-circle"></i> Heavy furniture &amp; appliances</li>
+            <li><i class="fas fa-check-circle"></i> Commercial goods handling</li>
+            <li><i class="fas fa-check-circle"></i> Warehouse loading assistance</li>
+            <li><i class="fas fa-check-circle"></i> Skilled labour team</li>
+            <li><i class="fas fa-check-circle"></i> Available on short notice</li>
+          </ul>
+          <a class="btn-primary" href="https://wa.me/919381234146?text=Hi%2C%20I%20need%20Loading%20and%20Unloading%20service" target="_blank" style="margin-top:20px;display:inline-flex;text-decoration:none;"><i class="fab fa-whatsapp"></i> Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="container quote-inner">
+      <h2>Not Sure Which Service You Need?</h2>
+      <p>Just WhatsApp us — we'll understand your requirement and suggest the right plan.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px;">
+        <a class="btn-primary" href="https://wa.me/919381234146?text=Hi%2C%20I%20need%20help%20choosing%20the%20right%20service" target="_blank" style="text-decoration:none;"><i class="fab fa-whatsapp"></i> Chat with Us</a>
+        <a href="tel:9381234146" class="btn-outline" style="text-decoration:none;"><i class="fas fa-phone"></i> Call 9381234146</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" onclick="showPage('home')" style="cursor:pointer">
+            <div class="logo-icon"><i class="fas fa-truck-moving"></i></div>
+            <div class="logo-text">
+              <span class="name" style="color:white">Sri Tejaswini</span>
+              <span class="tagline">Packers & Movers</span>
+            </div>
+          </a>
+          <p>Trusted packers and movers in Tirupati. Available 24/7 across India.</p>
+          <div class="footer-socials">
+            <a class="social-btn" href="https://wa.me/919381234146" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a class="social-btn" href="tel:9381234146"><i class="fas fa-phone"></i></a>
+            <a class="social-btn" href="mailto:ntejaswini717@gmail.com"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a onclick="showPage('home')"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a onclick="showPage('about')"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a onclick="showPage('contact')"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a><i class="fas fa-chevron-right"></i> House Shifting</a></li>
+            <li><a><i class="fas fa-chevron-right"></i> Office Shifting</a></li>
+            <li><a><i class="fas fa-chevron-right"></i> Loading & Unloading</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:9381234146">9381234146</a></span></div>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Tirupati – 517502</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Sri Tejaswini Packers and Movers. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== CONTACT PAGE ===================== -->
+<div class="page" id="page-contact">
+  <div class="services-hero">
+    <div class="container">
+      <h1 style="font-size:2.5rem;font-weight:800;margin-bottom:12px;">Contact Us</h1>
+      <p style="color:rgba(255,255,255,0.8);font-size:1rem;max-width:500px;margin:0 auto;">Reach us anytime — we're available 24 hours, 7 days a week</p>
+      <div class="page-breadcrumb">Home <i class="fas fa-chevron-right" style="font-size:0.6rem"></i> <span>Contact Us</span></div>
+    </div>
+  </div>
+
+  <section class="glass-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Info -->
+        <div class="glass-card contact-info-card fade-up">
+          <div class="contact-info-title">Get In Touch</div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-detail">
+              <div class="cd-label">Address</div>
+              <div class="cd-val">Opp Mapil School, TTD Plots,<br>Vasavi Nagar, Mr Palli Circle,<br>Tirupati – 517502, Andhra Pradesh</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-detail">
+              <div class="cd-label">Phone</div>
+              <div class="cd-val"><a href="tel:9381234146">9381234146</a><br><a href="tel:9515330444">9515330444</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-detail">
+              <div class="cd-label">Email</div>
+              <div class="cd-val"><a href="mailto:ntejaswini717@gmail.com">ntejaswini717@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-detail">
+              <div class="cd-label">Working Hours</div>
+              <div class="cd-val">24 Hours · 7 Days a Week<br>Including Holidays</div>
+            </div>
+          </div>
+
+          <div style="margin-top:24px;padding:20px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:14px;text-align:center;">
+            <p style="color:white;font-size:0.84rem;font-weight:500;margin-bottom:12px;">Fastest response via WhatsApp</p>
+            <a href="https://wa.me/919381234146?text=Hi%2C%20I%20need%20a%20quote%20for%20shifting%20services" target="_blank" style="background:white;color:#25D366;padding:12px 24px;border-radius:8px;font-weight:700;font-size:0.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">
+              <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="glass-card contact-form-card fade-up" style="transition-delay:0.15s">
+          <div class="form-title">Send Us a Message</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" placeholder="Full name" id="cf-name">
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="10-digit number" id="cf-phone">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email (optional)</label>
+            <input type="email" placeholder="your@email.com" id="cf-email">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Service Required</label>
+              <select id="cf-service">
+                <option value="">Select service</option>
+                <option>House Shifting</option>
+                <option>Office Shifting</option>
+                <option>Loading & Unloading</option>
+                <option>Vehicle Transport</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Moving From</label>
+              <input type="text" placeholder="City / Area" id="cf-from">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Moving To</label>
+            <input type="text" placeholder="City / Area" id="cf-to">
+          </div>
+          <div class="form-group">
+            <label>Additional Details</label>
+            <textarea placeholder="Tell us more about your move — number of rooms, special items, preferred date, etc." id="cf-msg"></textarea>
+          </div>
+          <button class="submit-btn" onclick="submitContactWA()">
+            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+          </button>
+          <button class="submit-btn wa" onclick="callNow()" style="margin-top:10px;background:var(--blue);">
+            <i class="fas fa-phone"></i> Call Us Directly
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map placeholder -->
+  <section class="glass-section" style="background:var(--gray);padding:40px 0;">
+    <div class="container">
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.1);">
+        <iframe
+          src="https://maps.google.com/maps?q=Vasavi+Nagar+Mr+Palli+Circle+Tirupati&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="340"
+          style="border:none;display:block;"
+          allowfullscreen=""
+          loading="lazy"
+          title="Sri Tejaswini Packers and Movers Location">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" onclick="showPage('home')" style="cursor:pointer">
+            <div class="logo-icon"><i class="fas fa-truck-moving"></i></div>
+            <div class="logo-text">
+              <span class="name" style="color:white">Sri Tejaswini</span>
+              <span class="tagline">Packers & Movers</span>
+            </div>
+          </a>
+          <p>Trusted packers and movers in Tirupati. Available 24/7 across India.</p>
+          <div class="footer-socials">
+            <a class="social-btn" href="https://wa.me/919381234146" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a class="social-btn" href="tel:9381234146"><i class="fas fa-phone"></i></a>
+            <a class="social-btn" href="mailto:ntejaswini717@gmail.com"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a onclick="showPage('home')"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a onclick="showPage('about')"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a onclick="showPage('contact')"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a><i class="fas fa-chevron-right"></i> House Shifting</a></li>
+            <li><a><i class="fas fa-chevron-right"></i> Office Shifting</a></li>
+            <li><a><i class="fas fa-chevron-right"></i> Loading & Unloading</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:9381234146">9381234146</a></span></div>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Tirupati – 517502</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Sri Tejaswini Packers and Movers. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float">
+  <a class="call-float" href="tel:9381234146" title="Call Now">
+    <i class="fas fa-phone"></i>
+  </a>
+  <a class="wa-btn" href="https://wa.me/919381234146?text=Hi%2C%20I%20need%20a%20quote%20for%20shifting%20services" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-tooltip">Chat on WhatsApp</span>
+  </a>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  // ===== PAGE NAVIGATION =====
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const navEl = document.getElementById('nav-' + name);
+    if (navEl) navEl.classList.add('active');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    closeMenu();
+
+    // trigger fade-up for new page
+    setTimeout(initFadeUps, 100);
+  }
+
+  // ===== MOBILE MENU =====
+  function toggleMenu() {
+    const links = document.getElementById('navLinks');
+    const cta = document.getElementById('navCta');
+    const overlay = document.getElementById('navOverlay');
+    const open = links.classList.toggle('open');
+    cta.classList.toggle('open', open);
+    overlay.classList.toggle('show', open);
+  }
+  function closeMenu() {
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('navCta').classList.remove('open');
+    document.getElementById('navOverlay').classList.remove('show');
+  }
+
+  // ===== HERO SLIDESHOW =====
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+
+  function goToSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  setInterval(() => goToSlide(currentSlide + 1), 4500);
+
+  // ===== FADE UP OBSERVER =====
+  function initFadeUps() {
+    const fades = document.querySelectorAll('.page.active .fade-up');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+    }, { threshold: 0.1 });
+    fades.forEach(f => obs.observe(f));
+  }
+  initFadeUps();
+
+  // ===== QUOTE via WhatsApp =====
+  function sendQuoteWA() {
+    const name = document.getElementById('quoteName').value.trim();
+    const phone = document.getElementById('quotePhone').value.trim();
+    if (!name || !phone) { showToast('Please enter your name and phone number!'); return; }
+    const msg = encodeURIComponent(`Hi, I need a quote for shifting services.\nName: ${name}\nPhone: ${phone}`);
+    window.open('https://wa.me/919381234146?text=' + msg, '_blank');
+  }
+
+  function submitContactWA() {
+    const name = document.getElementById('cf-name').value.trim();
+    const phone = document.getElementById('cf-phone').value.trim();
+    const service = document.getElementById('cf-service').value;
+    const from = document.getElementById('cf-from').value.trim();
+    const to = document.getElementById('cf-to').value.trim();
+    const msg_text = document.getElementById('cf-msg').value.trim();
+
+    if (!name || !phone) { showToast('Please enter your name and phone!'); return; }
+
+    let text = `Hi, I need a shifting quote.\nName: ${name}\nPhone: ${phone}`;
+    if (service) text += `\nService: ${service}`;
+    if (from) text += `\nFrom: ${from}`;
+    if (to) text += `\nTo: ${to}`;
+    if (msg_text) text += `\nDetails: ${msg_text}`;
+
+    window.open('https://wa.me/919381234146?text=' + encodeURIComponent(text), '_blank');
+  }
+
+  function callNow() {
+    window.location.href = 'tel:9381234146';
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
+</script>
+</body>
+</html>
