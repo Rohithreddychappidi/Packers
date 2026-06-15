@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+<urlset
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
     <loc>https://sritejaswinipackersandmovers.vercel.app/</loc>
-    <lastmod>2025-06-14</lastmod>
+
+    <lastmod>2026-06-15</lastmod>
+
     <changefreq>weekly</changefreq>
+
     <priority>1.0</priority>
+
     <image:image>
-      <image:loc>https://sritejaswinipackersandmovers.vercel.app/images/slide2.jpg</image:loc>
-      <image:title>Sri Tejaswini Packers and Movers - Tirupati</image:title>
+      <image:loc>
+https://sritejaswinipackersandmovers.vercel.app/images/slide2.jpg
+      </image:loc>
+
+      <image:title>
+Sri Tejaswini Packers and Movers - Tirupati
+      </image:title>
     </image:image>
-    <image:image>
-      <image:loc>https://sritejaswinipackersandmovers.vercel.app/images/slide1.png</image:loc>
-      <image:title>House Shifting Services Tirupati</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://sritejaswinipackersandmovers.vercel.app/images/about.png</image:loc>
-      <image:title>About Sri Tejaswini Packers and Movers</image:title>
-    </image:image>
+
   </url>
 
 </urlset>
